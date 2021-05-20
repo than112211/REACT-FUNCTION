@@ -1,0 +1,328 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Nest - Learning Thermostat - 3rd Generation - Stainless Steel",
+      "img": "sp1.webp",
+      "category": 1,
+      "detail_category":1,
+      "sub_category":3,
+      "price":249.99,
+      "brand":1,
+      "type":1,
+      "rating":4
+    },
+    {
+      "id": 2,
+      "name": "Google - Chromecast - Black",
+      "img": "sp2.webp",
+      "category": 1,
+      "detail_category":1,
+      "price":139.99,
+      "sub_category":2,
+      "brand":1,
+      "type":2,
+      "rating":3
+    },
+    {
+      "id": 3,
+      "name": "Insignia™ - 2.6 Cu. Ft. Compact Refrigerator - Black",
+      "img": "sp3.webp",
+      "category": 1,
+      "detail_category":1,
+      "price":349.99,
+      "sub_category":1,
+      "brand":1,
+      "type":3,
+
+      "rating":3
+    },
+    {
+      "id": 4,
+      "name": "Keurig - K50 Coffeemaker - Black",
+      "img": "sp4.webp",
+      "category": 1,
+      "detail_category":2,
+      "price":349.99,
+      "sub_category":1,
+      "brand":2,
+      "type":1,
+      "rating":3
+    },
+    {
+      "id": 5,
+      "name": "iRobot - Roomba 650 Vacuuming Robot - Black",
+      "img": "sp5.webp",
+      "category": 1,
+      "detail_category":2,
+      "price":649.99,
+      "sub_category":2,
+      "brand":2,
+      "type":2,
+      "rating":3
+    },
+    {
+      "id": 6,
+      "name": "Shark - Navigator Lift-Away Deluxe Bagless Upright Vacuum - Blue",
+      "img": "sp6.webp",
+      "category": 1,
+      "detail_category":2,
+      "price":649.99,
+      "sub_category":3,
+      "brand":2,
+      "type":3,
+      "rating":3
+    },
+    {
+      "id": 7,
+      "name": "LG - 1.5 Cu. Ft. Mid-Size Microwave - Stainless Steel",
+      "img": "sp7.webp",
+      "category": 1,
+      "detail_category":3,
+      "price":249.99,
+      "sub_category":2,
+      "brand":2,
+      "type":3,
+      "rating":3
+    },
+    {
+      "id": 8,
+      "name": "Insignia™ - 5.0 Cu. Ft. Chest Freezer - White",
+      "img": "sp8.webp",
+      "category": 1,
+      "detail_category":1,
+      "price":249.99,
+      "sub_category":3,
+      "brand":3,
+      "type":3,
+      "rating":3
+    },
+    {
+      "id": 9,
+      "name": "Samsung - activewash 4.8 Cu. Ft. 11-Cycle High-Efficiency Top-Loading Washer - White",
+      "img": "sp9.webp",
+      "category": 1,
+      "detail_category":3,
+      "price":249.99,
+      "brand":4,
+      "sub_category":1,
+      "type":1,
+      "rating":3
+    },
+    {
+      "id": 10,
+      "name": "LG - 2.0 Cu. Ft. Full-Size Microwave - Stainless Steel",
+      "img": "sp10.webp",
+      "category": 1,
+      "detail_category":2,
+      "price":249.99,
+      "brand":4,
+      "type":1,
+      "rating":3
+    }
+    
+  ],
+  "categories": [
+    {
+      "id":1,
+      "name":"Appliances",
+      "detail_category":[
+        {
+          "id":1,
+          "name":"Dishwashers",
+          "sub_category":[
+            {
+              "id":1,
+              "name":"Built-in Dish"
+            }
+          ]
+        },
+        {
+          "id":2,
+          "name":"Fans",
+          "sub_category":[
+            {
+              "id":1,
+              "name":"Ceiling Fans"
+            },
+            {
+              "id":2,
+              "name":"Floors Fans"
+            },
+            {
+              "id":3,
+              "name":"Table Fans"
+            }
+          ]
+        },
+        {
+          "id":3,
+          "name":"Freezer",
+          "sub_category":[
+            {
+              "id":1,
+              "name":"Built-in Freezer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id":2,
+      "name":"Audio",
+      "detail_category":[
+        {
+          "id":1,
+          "name":"Auxulirary"
+        },
+        {
+          "id":2,
+          "name":"Cable"
+        },
+        {
+          "id":3,
+          "name":"Dock"
+        }
+      ]
+    },
+    {
+      "id":3,
+      "name":"Camera",
+      "detail_category":[
+        {
+          "id":1,
+          "name":"Binocular"
+        },
+        {
+          "id":2,
+          "name":"DigitalCamera"
+        },
+        {
+          "id":3,
+          "name":"Telescope"
+        }
+      ]
+    }
+  ],
+  "brands":[
+    {
+      "category_id":1,
+      "brand":[
+        {
+          "id":1,
+          "name":"SamSung"
+        },
+        {
+          "id":2,
+          "name":"Tosiba"
+        },
+        {
+          "id":3,
+          "name":"LG"
+        },
+        {
+          "id":4,
+          "name":"Xiaomi"
+        }
+      ]
+    },
+    {
+      "category_id":2,
+      "brand":[
+        {
+          "id":1,
+          "name":"Sony"
+        },
+        {
+          "id":2,
+          "name":"Inssiga"
+        },
+        {
+          "id":3,
+          "name":"Bose"
+        },
+        {
+          "id":4,
+          "name":"JBL"
+        }
+      ]
+    },
+    {
+      "category_id":3,
+      "brand":[
+        {
+          "id":1,
+          "name":"Canon"
+        },
+        {
+          "id":2,
+          "name":"Sony"
+        },
+        {
+          "id":3,
+          "name":"Nikon"
+        },
+        {
+          "id":4,
+          "name":"Digipower"
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "category_id":3,
+      "type":[
+        {
+          "id":1,
+          "name":"lense core"
+        },
+        {
+          "id":2,
+          "name":"photo video bag"
+        },
+        {
+          "id":3,
+          "name":"digital camera"
+        }
+      ]
+    },
+    {
+      "category_id":1,
+      "type":[
+        {
+          "id":1,
+          "name":"Coffe/Capochino"
+        },
+        {
+          "id":2,
+          "name":"Dishwhaer"
+        },
+        {
+          "id":3,
+          "name":"Food"
+        }
+      ]
+    },
+    {
+      "category_id":2,
+      "type":[
+        {
+          "id":1,
+          "name":"Wireless speaker"
+        },
+        {
+          "id":2,
+          "name":"wireless inear"
+        },
+        {
+          "id":3,
+          "name":"wireless on"
+        }
+      ]
+    }
+  ]
+
+ 
+ 
+}
