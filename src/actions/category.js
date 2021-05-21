@@ -9,5 +9,11 @@ export const ClearCategory = () => {
         type: 'CLEARCATEGORY',
     }
 }
+export const FetchDataCategory = (id) => {
+    return {
+        type: 'FETCH_CATEGORY',
+        payload:id
+    }
+}
 
 

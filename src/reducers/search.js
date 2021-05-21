@@ -1,15 +1,12 @@
 
-const Search =  (state = {} ,action) => {
+const Search =  (state = '' ,action) => {
     switch (action.type){
-        case 'FILTERSEARCH' : {
-          state = action.payload
-        return state
+        case 'SET_INPUT_SEARCH': {
+        return action.payload
         }
         case 'CLEARSEARCH' : {
-           state = {}
-        return state
+        return ''
         }
-    
         default : return state
     }
 }

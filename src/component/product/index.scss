@@ -1,0 +1,54 @@
+
+.card__container{
+    border: 1px solid rgba($color: #000000, $alpha: .2);
+    width: 100%;
+    height: 30rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    .card__img{
+        width: 100%;
+        height: 40%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .card__content{
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+        h1{
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+        h3{
+            font-size: 1.2rem;
+        }
+        .rating__product{
+            margin: 1rem 0;
+            svg{
+                color: orange;
+                margin-right: .4rem;
+            }
+        }
+        .btn__buy{
+            text-align: center;
+            margin-top: auto;
+            button{
+                padding: .4rem 2.6rem;
+                border-radius: 25px;
+               
+            }
+        }
+    }
+}
+.btn__filter{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+.pagination__group{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}

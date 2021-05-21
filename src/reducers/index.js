@@ -7,8 +7,8 @@ import Price from './price'
 import Search from './search'
 import Pagination from './pagination'
 import Home from './home'
-
 import {combineReducers} from 'redux'
+import Loading from './loading'
 
 
 const rootReducer = combineReducers({
@@ -21,6 +21,7 @@ const rootReducer = combineReducers({
     search:Search,
     pagination:Pagination,
     home:Home,
+    loading:Loading
 });
 
 export default rootReducer

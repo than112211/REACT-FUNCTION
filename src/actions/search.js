@@ -9,4 +9,10 @@ export const ClearSearch = () => {
         type: 'CLEARSEARCH',
     }
 }
+export const InputSearch = (char) => {
+    return {
+        type: 'SET_INPUT_SEARCH',
+        payload:char
+    }
+}
 
