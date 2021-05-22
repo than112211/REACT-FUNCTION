@@ -1,10 +1,11 @@
-import {call, fork, take,put, delay, takeLatest} from 'redux-saga/effects'
+import {call, fork, take,put, delay, takeLatest, select} from 'redux-saga/effects'
 import {getProductCategory} from '../apis/category'
 import {getProductType} from '../apis/type'
 import {getProductBrand} from '../apis/brand'
 import {getProductRating} from '../apis/rating'
 import {getProductSearch} from '../apis/search'
 import {getProductHome} from '../apis/home'
+import {getProductPagination} from '../apis/pagination'
 import {getProductAsc,getProductDesc} from '../apis/filter_asc_desc'
 import {ShowLoading,HiddenLoading} from '../actions/loading'
 import {ToTalProduct} from '../actions/product'
@@ -13,9 +14,9 @@ import {ClearType} from '../actions/type'
 import {ClearBrand} from '../actions/brand'
 import {ClearRating} from '../actions/rating'
 import {SetFilter} from '../actions/home'
+import {ResetPage} from '../actions/pagination'
 
 function* trackingFetchDataCategory(payload){
-    console.log('CATEGORY')
     // yield select de lay state
 //    while(true) { // vì take chỉ thực hiện theo dõi 1 lần nên dùng vòng lặp vô tận để tái sử dụng
 //     yield take(FilterCategory) //khi filtercategory đc dispatch thì bộ này đc active // blocking
@@ -24,23 +25,18 @@ function* trackingFetchDataCategory(payload){
     yield put(ClearType())
     yield put(ClearBrand())
     yield put(ClearRating())
+    yield put(ResetPage())
     const data = yield call(getProductCategory) // gọi api //blocking
     if(data.status == 'SUCCESS'){
         yield put(ToTalProduct(data.data)) // put dung de dispatch actions
      }
     yield delay(3000)
     yield put(HiddenLoading())
-
-//    }
-   
-
 }
 function* trackingFetchDataType(){
-    console.log('TYPE')
-
     yield put(ShowLoading())
     yield put(SetFilter())
-
+    yield put(ResetPage())
     yield put(ClearBrand())
     yield put(ClearRating())
     const data = yield call(getProductType) // gọi api //blocking
@@ -52,11 +48,9 @@ function* trackingFetchDataType(){
 
 }
 function* trackingFetchDataBrand(){
-    console.log('BRAND')
-
     yield put(ShowLoading())
     yield put(SetFilter())
-
+    yield put(ResetPage())
     yield put(ClearRating())
     const data = yield call(getProductBrand) // gọi api //blocking
     if(data.status == 'SUCCESS'){
@@ -66,11 +60,9 @@ function* trackingFetchDataBrand(){
     yield put(HiddenLoading())
 }
 function* trackingFetchDataRating(){
-    console.log('RATING')
-
     yield put(ShowLoading())
     yield put(SetFilter())
-
+    yield put(ResetPage())
     const data = yield call(getProductRating) // gọi api //blocking
     if(data.status == 'SUCCESS'){
         yield put(ToTalProduct(data.data)) // put dung de dispatch actions
@@ -79,9 +71,8 @@ function* trackingFetchDataRating(){
     yield put(HiddenLoading())
 }
 function* trackingFetchDataSearch(){
-    console.log('SEARCH')
-
     yield put(ShowLoading())
+    yield put(ResetPage())
     const data = yield call(getProductSearch) // gọi api //blocking
     if(data.status == 'SUCCESS'){
         yield put(ToTalProduct(data.data)) // put dung de dispatch actions
@@ -90,8 +81,6 @@ function* trackingFetchDataSearch(){
     yield put(HiddenLoading())
 }
 function* trackingFetchDataFilterAsc(){
-    console.log('ASC')
-
     yield put(ShowLoading())
     const data = yield call(getProductAsc) // gọi api //blocking
     if(data.status == 'SUCCESS'){
@@ -101,10 +90,18 @@ function* trackingFetchDataFilterAsc(){
     yield put(HiddenLoading())
 }
 function* trackingFetchDataFilterDesc(){
-    console.log('DESC')
-
     yield put(ShowLoading())
     const data = yield call(getProductDesc) // gọi api //blocking
+    if(data.status == 'SUCCESS'){
+        yield put(ToTalProduct(data.data)) // put dung de dispatch actions
+     }
+    yield delay(200)
+    yield put(HiddenLoading())
+}
+function* trackingFetchDataPagination(){
+    console.log('pagi')
+    yield put(ShowLoading())
+    const data = yield call(getProductPagination) // gọi api //blocking
     if(data.status == 'SUCCESS'){
         yield put(ToTalProduct(data.data)) // put dung de dispatch actions
      }
@@ -117,6 +114,7 @@ function* trackingClearFilter(){
     yield put(ClearType())
     yield put(ClearBrand())
     yield put(ClearRating())
+    yield put(ResetPage())
     const data = yield call(getProductHome) // gọi api //blocking
     if(data.status == 'SUCCESS'){
         yield put(ToTalProduct(data.data)) // put dung de dispatch actions
@@ -138,5 +136,8 @@ function* rootSaga() {
     yield takeLatest('SET_FILTER_ASC',trackingFetchDataFilterAsc)
     yield takeLatest('SET_FILTER_DESC',trackingFetchDataFilterDesc)
     yield takeLatest('CLEAR_FILTER',trackingClearFilter)
+    yield takeLatest('NEXT_PAGE',trackingFetchDataPagination)
+    yield takeLatest('PRE_PAGE',trackingFetchDataPagination)
+    yield takeLatest('PAGINATION',trackingFetchDataPagination)
 }
 export default rootSaga

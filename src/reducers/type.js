@@ -12,6 +12,9 @@ const Type =  (state = [] ,action) => {
         case 'CLEARTYPE' : {
         return []
         }
+        case 'ELEMENT_TYPE' : {
+            return [...state,action.payload]
+            }
         default : return state
     }
 }

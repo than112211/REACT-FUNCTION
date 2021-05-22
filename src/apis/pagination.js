@@ -17,12 +17,12 @@ function handleBrandChecked(id){
     return str
     
 }
-export const getProductRating =  () =>{
+export const getProductPagination =  () =>{
     const state = store.getState(state => state)
     const {idCategory,idDetailCategory} = state.category
     const {type,brand,rating,search} = state
     const {page,limit} = state.pagination
-    const url = `http://localhost:3000/products?category=${idCategory}${idDetailCategory ? `&detail_category=${idDetailCategory}`:``}${handleTypeChecked(type) ? handleTypeChecked(type) : ``}${handleBrandChecked(brand) ? handleBrandChecked(brand) : ``}${rating ? `&rating=${rating}` :``}${ search ? `&name_like=${search}`:``}&_sort=price&_order=asc&_page=${page}&_limit=${limit}`
+    const url = `http://localhost:3000/products?category=${idCategory}${idDetailCategory ? `&detail_category=${idDetailCategory}`:``}${handleTypeChecked(type) ? handleTypeChecked(type) : ``}${handleBrandChecked(brand) ? handleBrandChecked(brand) : ``}${rating ? `&rating=${rating}` :``}${ search ? `&name_like=${search}`:``}&_page=${page}&_limit=${limit}`
     const option = {
         method : 'GET',
         mode : 'cors',

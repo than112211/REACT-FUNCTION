@@ -1,7 +1,7 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState ,useEffect, useRef} from 'react';
 import {useSelector,useDispatch} from "react-redux"
 import PropTypes from 'prop-types';
-import {AddType,RemoveType,ClearType} from '../../../actions/type'
+import {AddType,RemoveType} from '../../../actions/type'
 Type.propTypes = {
     
 };
@@ -12,6 +12,7 @@ function Type(props) {
     const dispatch = useDispatch()
     const idcategory = useSelector(state => state.category)
     const {idCategory,idDetailCategory} = idcategory
+
     useEffect(() => {
         function getType() {
             const url = `http://localhost:3000/types?category_id=${idCategory}`;
@@ -70,7 +71,7 @@ function Type(props) {
             <ul>
                 {type.map((type,index) =>{
                     return <div className="filter__item type__item" style={{display : handleTotalProduct(index+1) > 0  ? 'block' : 'none'}}>
-                            <li > <input  onChange={ (event) => handleChangeCheckType(event,index+1)}   type="checkbox"></input>{type.name} 
+                            <li > <input ref={checkType} onChange={ (event) => handleChangeCheckType(event,index+1)}   type="checkbox"></input>{type.name} 
                                 ({handleTotalProduct(index+1)})
                             </li>
                         </div>
